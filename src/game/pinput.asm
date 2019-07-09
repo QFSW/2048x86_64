@@ -1,12 +1,10 @@
 PUBLIC pinput
-EXTERN print:PROC
-EXTERN getchar:PROC
+EXTERN print:PROC, readl:PROC
 
 ASCII_w EQU 119
 ASCII_d EQU 100
 ASCII_s EQU 115
 ASCII_a EQU 97
-ASCII_LINE EQU 10
 
 .data
 	inputstr db "Please input a move: ", 0
@@ -14,13 +12,15 @@ ASCII_LINE EQU 10
 
 .code
 pinput PROC
+	SUB RSP, 8
 	ENTER 32, 0
 	LEA RCX, inputstr
 	CALL print
 ploop:
-	CALL getchar
-	CMP RAX, ASCII_LINE
-	JE ploop
+	MOV RCX, RSP
+	MOV RDX, 1
+	CALL readl
+	MOV RAX, [RSP]
 	CMP RAX, ASCII_w
 	MOV RDX, 0
 	JE pend
@@ -39,6 +39,7 @@ ploop:
 pend:
 	MOV RAX, RDX
 	LEAVE
+	ADD RSP, 8
 	RET
 pinput ENDP
 
