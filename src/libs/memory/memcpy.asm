@@ -1,5 +1,8 @@
 PUBLIC memcpy
 
+; RCX = src
+; RDX = dest
+; R8 = size
 .code
 memcpy PROC
 mloop:
