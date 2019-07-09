@@ -23,9 +23,6 @@
     <MASM Include="src\game\game_main.asm">
       <Filter>Source Files</Filter>
     </MASM>
-    <MASM Include="src\libs\strings\print.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
     <MASM Include="src\libs\strings\strlen.asm">
       <Filter>Source Files</Filter>
     </MASM>
@@ -36,6 +33,12 @@
       <Filter>Source Files</Filter>
     </MASM>
     <MASM Include="src\libs\memory\memeq.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\libs\strings\print.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\libs\strings\printd.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>

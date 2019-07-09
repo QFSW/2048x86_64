@@ -2,6 +2,7 @@ PUBLIC print
 EXTERN putchar:PROC
 
 .code
+; RCX = str
 print PROC
 	ENTER 16, 0
 	PUSH R12

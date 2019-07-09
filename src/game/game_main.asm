@@ -1,5 +1,5 @@
 PUBLIC game_main
-EXTERN print:PROC, strlen:PROC
+EXTERN print:PROC, strlen:PROC, printd:PROC
 
 GRID_WIDTH EQU 4
 GRID_SIZE EQU GRID_WIDTH * GRID_WIDTH

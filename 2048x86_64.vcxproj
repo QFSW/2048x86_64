@@ -132,6 +132,7 @@
     <MASM Include="src\libs\memory\memeq.asm" />
     <MASM Include="src\libs\memory\memset.asm" />
     <MASM Include="src\libs\strings\print.asm" />
+    <MASM Include="src\libs\strings\printd.asm" />
     <MASM Include="src\libs\strings\strlen.asm" />
   </ItemGroup>
   <ItemGroup>

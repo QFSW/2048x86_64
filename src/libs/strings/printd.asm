@@ -1,0 +1,50 @@
+PUBLIC printd
+EXTERN putchar:PROC
+
+.code
+; RCX = num
+printd PROC
+	ENTER 16, 0
+	PUSH R12
+	PUSH R13
+	PUSh R14
+	MOV R14, 0
+	MOV R13, RCX
+	MOV R12, 0
+
+fliploop:
+	MOV RAX, R13
+	MOV RCX, 10
+	MOV RDX, 0
+	DIV RCX
+	MOV R13, RAX
+	MOV R8, RDX
+	MOV RAX, R12
+	MUL RCX
+	MOV R12, RAX
+	ADD R12, R8
+	INC R14
+	CMP R13, 0
+	JNE fliploop
+
+printloop:
+	MOV RAX, R12
+	MOV RCX, 10
+	MOV RDX, 0
+	DIV RCX
+	MOV R12, RAX
+	MOV RCX, RDX
+	ADD RCX, 48
+	CALL putchar
+	DEC R14
+	CMP R14, 0
+	JNE printloop
+
+	POP R14
+	POP R13
+	POP R12
+	LEAVE
+	RET
+printd ENDP
+
+END
