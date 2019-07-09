@@ -35,6 +35,9 @@
     <MASM Include="src\libs\memory\memset.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="src\libs\memory\memeq.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\game\game_main.h">
