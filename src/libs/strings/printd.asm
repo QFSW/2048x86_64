@@ -4,10 +4,10 @@ EXTERN putchar:PROC
 .code
 ; RCX = num
 printd PROC
-	ENTER 16, 0
 	PUSH R12
 	PUSH R13
 	PUSh R14
+	ENTER 32, 0
 	MOV R14, 0
 	MOV R13, RCX
 	MOV R12, 0
@@ -40,10 +40,10 @@ printloop:
 	CMP R14, 0
 	JNE printloop
 
+	LEAVE
 	POP R14
 	POP R13
 	POP R12
-	LEAVE
 	RET
 printd ENDP
 

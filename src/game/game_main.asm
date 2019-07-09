@@ -1,5 +1,5 @@
 PUBLIC game_main
-EXTERN print:PROC, strlen:PROC, printd:PROC
+EXTERN print:PROC, strlen:PROC, printgrid:PROC, puts:PROC
 
 GRID_WIDTH EQU 4
 GRID_SIZE EQU GRID_WIDTH * GRID_WIDTH
@@ -15,8 +15,9 @@ game_main PROC
 	LEA RCX, intro
 	CALL print
 
-	LEA RCX, intro
-	CALL strlen
+	LEA RCX, grid
+	MOV RDX, GRID_WIDTH
+	CALL printgrid
 	
 	LEAVE
     RET

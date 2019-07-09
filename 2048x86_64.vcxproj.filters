@@ -41,6 +41,9 @@
     <MASM Include="src\libs\strings\printd.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="src\game\printgrid.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\game\game_main.h">
