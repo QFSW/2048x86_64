@@ -18,19 +18,22 @@ printgrid PROC
 	MOV R15, -1
 
 cloop:
-	MOV R14, -1
+	MOV R14, 0
 	INC R15
 	CMP R15, R13
 	JE pend
 	MOV RCX, ASCII_LINE
 	CALL putchar
 rloop:
-	INC R14
-	MOV RCX, [R12 + R14 * 4]
+	MOV RAX, R15
+	MUL R13
+	ADD RAX, R14
+	MOV RCX, [R12 + RAX * 8]
 	CALL printd
 
 	MOV RCX, ASCII_SPACE
 	CALL putchar
+	INC R14
 	CMP R14, R13
 	JE cloop
 	JL rloop
