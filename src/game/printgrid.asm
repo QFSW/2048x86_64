@@ -39,6 +39,8 @@ rloop:
 	JL rloop
 
 pend:
+	MOV RCX, ASCII_LINE
+	CALL putchar
 	LEAVE
 	POP R15
 	POP R14

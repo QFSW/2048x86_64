@@ -1,5 +1,6 @@
 PUBLIC game_main
-EXTERN print:PROC, strlen:PROC, printgrid:PROC, puts:PROC
+EXTERN print:PROC, printgrid:PROC, pinput:PROC
+EXTERN puts:PROC, getchar:PROC
 
 GRID_WIDTH EQU 4
 GRID_SIZE EQU GRID_WIDTH * GRID_WIDTH
@@ -19,6 +20,8 @@ game_main PROC
 	MOV RDX, GRID_WIDTH
 	CALL printgrid
 	
+	CALL pinput
+
 	LEAVE
     RET
 game_main ENDP

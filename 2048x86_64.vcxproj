@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\game\game_main.asm" />
+    <MASM Include="src\game\pinput.asm" />
     <MASM Include="src\game\printgrid.asm" />
     <MASM Include="src\libs\memory\memcpy.asm" />
     <MASM Include="src\libs\memory\memeq.asm" />
