@@ -35,16 +35,16 @@
     <MASM Include="src\libs\memory\memeq.asm">
       <Filter>Source Files</Filter>
     </MASM>
-    <MASM Include="src\libs\strings\print.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
-    <MASM Include="src\libs\strings\printd.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
     <MASM Include="src\game\printgrid.asm">
       <Filter>Source Files</Filter>
     </MASM>
     <MASM Include="src\game\pinput.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\libs\io\print.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\libs\io\printd.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
