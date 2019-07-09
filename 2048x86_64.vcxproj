@@ -128,6 +128,8 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\game\game_main.asm" />
+    <MASM Include="src\libs\memory\memcpy.asm" />
+    <MASM Include="src\libs\memory\memset.asm" />
     <MASM Include="src\libs\strings\print.asm" />
     <MASM Include="src\libs\strings\strlen.asm" />
   </ItemGroup>
