@@ -47,6 +47,9 @@
     <MASM Include="src\libs\io\printd.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="src\libs\io\readl.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\game\game_main.h">
