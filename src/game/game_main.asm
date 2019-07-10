@@ -33,7 +33,6 @@ gameloop:
 
 	CALL pinput
 	MOV R12, RAX
-
 	LEA RCX, grid
 	LEA RDX, grbuf
 	MOV R8, GRID_WIDTH
@@ -52,6 +51,8 @@ gameloop:
 	CALL addnum
 
 legalmoveskp:
+	CMP R12, 0
+	JE gameloop
 	LEA RCX, grid
 	LEA RDX, grbuf
 	MOV R8, GRID_WIDTH

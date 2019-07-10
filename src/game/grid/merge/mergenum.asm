@@ -3,7 +3,8 @@ PUBLIC mergenum
 .code
 ; RCX = row ptr
 ; RDX = index
-; RAX = moved/merged
+; RAX = 1 : moved
+;		3 : merged
 mergenum PROC
 	MOV R9, [RCX + RDX * 8]
 	CMP R9, 0
@@ -36,7 +37,7 @@ merge:
 	MOV RAX, 0
 	ADD [RCX + RDX * 8], R9
 	MOV [RCX + R8 * 8], RAX
-	MOV RAX, 1
+	MOV RAX, 3
 	POP R12
 	RET
 skp:

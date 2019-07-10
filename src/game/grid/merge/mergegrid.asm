@@ -4,7 +4,8 @@ EXTERN mergerow:PROC
 .code
 ; RCX = grid ptr
 ; RDX = grid width
-; RAX = moved/merged
+; RAX = 1 : moved
+;		3 : merged
 mergegrid PROC
 	ENTER 32, 0
 	PUSH R12

@@ -4,7 +4,8 @@ EXTERN mergenum:PROC
 .code
 ; RCX = row ptr
 ; RDX = row size
-; RAX = moved/merged
+; RAX = 1 : moved
+;		3 : merged
 mergerow PROC
 	ENTER 32, 0
 	PUSH R12
