@@ -43,12 +43,15 @@ gameloop:
 	LEA RCX, grid
 	MOV RDX, GRID_WIDTH
 	CALL mergegrid
+	CMP RAX, 0
+	JE legalmoveskp
 
 	LEA RCX, grid
 	MOV RDX, GRID_SIZE
 	LEA R8, grbuf
 	CALL addnum
 
+legalmoveskp:
 	LEA RCX, grid
 	LEA RDX, grbuf
 	MOV R8, GRID_WIDTH
