@@ -1,5 +1,5 @@
 PUBLIC game_main
-EXTERN printgrid:PROC, initgrid:PROC
+EXTERN printgrid:PROC, initgrid:PROC, mergegrid:PROC
 EXTERN print:PROC, pinput:PROC
 EXTERN puts:PROC, getchar:PROC
 EXTERN rseedt:PROC
@@ -23,11 +23,15 @@ game_main PROC
 	LEA RCX, intro
 	CALL print
 
+gameloop:
 	LEA RCX, grid
 	MOV RDX, GRID_WIDTH
 	CALL printgrid
-	
 	CALL pinput
+	LEA RCX, grid
+	MOV RDX, GRID_WIDTH
+	CALL mergegrid
+	JMP gameloop
 
 	LEAVE
     RET

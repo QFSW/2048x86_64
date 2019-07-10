@@ -35,9 +35,6 @@
     <MASM Include="src\libs\memory\memeq.asm">
       <Filter>Source Files</Filter>
     </MASM>
-    <MASM Include="src\game\printgrid.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
     <MASM Include="src\game\pinput.asm">
       <Filter>Source Files</Filter>
     </MASM>
@@ -50,9 +47,6 @@
     <MASM Include="src\libs\io\readl.asm">
       <Filter>Source Files</Filter>
     </MASM>
-    <MASM Include="src\game\rotategrid.asm">
-      <Filter>Source Files</Filter>
-    </MASM>
     <MASM Include="src\libs\math\logn.asm">
       <Filter>Source Files</Filter>
     </MASM>
@@ -62,7 +56,22 @@
     <MASM Include="src\libs\math\randn.asm">
       <Filter>Source Files</Filter>
     </MASM>
-    <MASM Include="src\game\initgrid.asm">
+    <MASM Include="src\game\grid\printgrid.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\game\grid\initgrid.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\game\grid\rotategrid.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\game\grid\merge\mergenum.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\game\grid\merge\mergerow.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\game\grid\merge\mergegrid.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
