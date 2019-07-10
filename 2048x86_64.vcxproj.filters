@@ -74,5 +74,8 @@
     <MASM Include="src\game\grid\merge\mergegrid.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="src\game\grid\addnum.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

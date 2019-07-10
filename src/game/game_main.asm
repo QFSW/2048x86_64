@@ -1,5 +1,6 @@
 PUBLIC game_main
 EXTERN printgrid:PROC, initgrid:PROC, mergegrid:PROC
+EXTERN addnum:PROC
 EXTERN print:PROC, pinput:PROC
 EXTERN puts:PROC, getchar:PROC
 EXTERN rseedt:PROC
@@ -10,7 +11,7 @@ GRID_SIZE EQU GRID_WIDTH * GRID_WIDTH
 .data
 	intro db "Welcome to 2048!", 0
 	grid dq GRID_SIZE DUP(0)
-	grbuf dq GRID_SIZE
+	grbuf dq GRID_SIZE DUP(?)
 
 .code
 game_main PROC
@@ -32,6 +33,10 @@ gameloop:
 	LEA RCX, grid
 	MOV RDX, GRID_WIDTH
 	CALL mergegrid
+	LEA RCX, grid
+	MOV RDX, GRID_SIZE
+	LEA R8, grbuf
+	CALL addnum
 	JMP gameloop
 
 	LEAVE

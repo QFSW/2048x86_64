@@ -128,6 +128,7 @@
   </ItemGroup>
   <ItemGroup>
     <MASM Include="src\game\game_main.asm" />
+    <MASM Include="src\game\grid\addnum.asm" />
     <MASM Include="src\game\grid\initgrid.asm" />
     <MASM Include="src\game\grid\merge\mergegrid.asm" />
     <MASM Include="src\game\grid\merge\mergenum.asm" />
