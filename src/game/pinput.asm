@@ -11,6 +11,7 @@ ASCII_a EQU 97
 	invlstr db "Invalid move, please enter a move: ", 0
 
 .code
+; RAX = move
 pinput PROC
 	SUB RSP, 8
 	ENTER 32, 0
