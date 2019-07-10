@@ -80,5 +80,8 @@
     <MASM Include="src\game\grid\rotategridn.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="src\libs\memory\memcpyw.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

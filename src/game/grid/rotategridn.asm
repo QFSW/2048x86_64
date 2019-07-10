@@ -1,6 +1,6 @@
 PUBLIC rotategridn
 EXTERN rotategrid:PROC
-EXTERN memcpy:PROC
+EXTERN memcpyw:PROC
 
 .code
 ; RCX = grid ptr
@@ -37,7 +37,7 @@ rloop:
 	MOV RCX, R12
 	MOV RDX, R13
 	MOV R8, R14
-	CALL memcpy
+	CALL memcpyw
 
 rdone:
 	LEAVE
