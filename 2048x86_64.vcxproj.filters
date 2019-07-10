@@ -59,5 +59,8 @@
     <MASM Include="src\libs\math\rand.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="src\libs\math\randn.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

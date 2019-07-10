@@ -134,6 +134,7 @@
     <MASM Include="src\libs\io\readl.asm" />
     <MASM Include="src\libs\math\logn.asm" />
     <MASM Include="src\libs\math\rand.asm" />
+    <MASM Include="src\libs\math\randn.asm" />
     <MASM Include="src\libs\memory\memcpy.asm" />
     <MASM Include="src\libs\memory\memeq.asm" />
     <MASM Include="src\libs\memory\memset.asm" />
