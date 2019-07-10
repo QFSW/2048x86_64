@@ -3,13 +3,19 @@ EXTERN rand:PROC
 
 .code
 ; RAX = max excl
+; RDX = min incl
 randn PROC
 	PUSH R12
+	PUSH R13
 	MOV R12, RCX
+	MOV R13, RDX
 	CALL rand
+	SUB RAX, R13
 	MOV RDX, 0
 	DIV R12
 	MOV RAX, RDX
+	ADD RAX, R13
+	POP R13
 	POP R12
 	RET
 randn ENDP
