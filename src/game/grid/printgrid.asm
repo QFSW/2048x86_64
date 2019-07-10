@@ -1,8 +1,14 @@
 PUBLIC printgrid
-EXTERN putchar:PROC, printd:PROC
+EXTERN putchar:PROC
+EXTERN print:PROC, printdp:PROC
 
+DIG_COUNT EQU 4
+LINE_COUNT EQU 2
 ASCII_SPACE EQU 32
 ASCII_LINE EQU 10
+
+.data
+	linespacing db LINE_COUNT DUP(ASCII_LINE), 0
 
 .code
 ; RCX = grid ptr
@@ -22,14 +28,15 @@ cloop:
 	INC R15
 	CMP R15, R13
 	JE pend
-	MOV RCX, ASCII_LINE
-	CALL putchar
+	LEA RCX, linespacing
+	CALL print
 rloop:
 	MOV RAX, R15
 	MUL R13
 	ADD RAX, R14
 	MOV RCX, [R12 + RAX * 8]
-	CALL printd
+	MOV RDX, DIG_COUNT
+	CALL printdp
 
 	MOV RCX, ASCII_SPACE
 	CALL putchar
