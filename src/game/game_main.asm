@@ -10,6 +10,7 @@ GRID_SIZE EQU GRID_WIDTH * GRID_WIDTH
 .data
 	intro db "Welcome to 2048!", 0
 	grid dq GRID_SIZE DUP(0)
+	grbuf dq GRID_SIZE
 
 .code
 game_main PROC
