@@ -18,6 +18,10 @@ rseedt ENDP
 
 ; RAX = num
 rand PROC
+	ROR rnum, 17
+	ADD rnum, 0110100b
+	NOT rnum
+	ROL rnum, 3
 	MOV RAX, rnum
 	RET
 rand ENDP
