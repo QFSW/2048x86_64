@@ -1,6 +1,8 @@
 PUBLIC printd
 EXTERN putchar:PROC
 
+ASCII_0 EQU 48
+
 .code
 ; RCX = num
 printd PROC
@@ -34,7 +36,7 @@ printloop:
 	DIV RCX
 	MOV R12, RAX
 	MOV RCX, RDX
-	ADD RCX, 48
+	ADD RCX, ASCII_0
 	CALL putchar
 	DEC R14
 	CMP R14, 0
