@@ -6,6 +6,11 @@ ASCII_d EQU 100
 ASCII_s EQU 115
 ASCII_a EQU 97
 
+MOVE_LEFT EQU 0
+MOVE_UP EQU 1
+MOVE_RIGHT EQU 2
+MOVE_DOWN EQU 3
+
 .data
 	inputstr db "Please input a move: ", 0
 	invlstr db "Invalid move, please enter a move: ", 0
@@ -23,16 +28,16 @@ ploop:
 	CALL readl
 	MOV RAX, [RSP]
 	CMP RAX, ASCII_w
-	MOV RDX, 0
+	MOV RDX, MOVE_LEFT
 	JE pend
 	CMP RAX, ASCII_d
-	MOV RDX, 1
+	MOV RDX, MOVE_UP
 	JE pend
 	CMP RAX, ASCII_s
-	MOV RDX, 2
+	MOV RDX, MOVE_RIGHT
 	JE pend
 	CMP RAX, ASCII_a
-	MOV RDX, 3
+	MOV RDX, MOVE_DOWN
 	JE pend
 	LEA RCX, invlstr
 	CALL print
