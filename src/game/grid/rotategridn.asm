@@ -5,7 +5,7 @@ EXTERN memcpyw:PROC
 .code
 ; RCX = grid ptr
 ; RDX = grbuf
-; R8 = grid size
+; R8 = grid width
 ; R9 = rotations
 rotategridn PROC
 	CMP R9, 0
@@ -15,17 +15,23 @@ rotategridn PROC
 	PUSH R13
 	PUSH R14
 	PUSH R15
+	PUSH RBX
 	ENTER 32, 0
 
 	MOV R12, RCX
 	MOV R13, RDX
-	MOV R14, R8
 	MOV R15, R9
+	MOV RBX, R8
+
+	MOV RAX, R8
+	MUL R8
+	MOV R14, RAX
 
 rloop:
 	MOV RCX, R12
 	MOV RDX, R13
 	MOV R8, R14
+	MOV R9, RBX
 	CALL rotategrid
 	MOV RAX, R12
 	MOV R12, R13
@@ -41,6 +47,7 @@ rloop:
 
 rdone:
 	LEAVE
+	POP RBX
 	POP R15
 	POP R14
 	POP R13

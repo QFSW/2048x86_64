@@ -36,7 +36,7 @@ gameloop:
 
 	LEA RCX, grid
 	LEA RDX, grbuf
-	MOV R8, GRID_SIZE
+	MOV R8, GRID_WIDTH
 	MOV R9, R12
 	CALL rotategridn
 
@@ -48,6 +48,13 @@ gameloop:
 	MOV RDX, GRID_SIZE
 	LEA R8, grbuf
 	CALL addnum
+
+	LEA RCX, grid
+	LEA RDX, grbuf
+	MOV R8, GRID_WIDTH
+	MOV R9, 4
+	SUB R9, R12
+	CALL rotategridn
 
 	JMP gameloop
 

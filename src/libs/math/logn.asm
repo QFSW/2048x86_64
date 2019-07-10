@@ -7,14 +7,13 @@ PUBLIC logn
 logn PROC
 	MOV R8, -1
 	MOV R9, RDX
+	MOV RAX, RCX
 
 lloop:
-	MOV RAX, RCX
 	MOV RDX, 0
 	DIV R9
 	INC R8
-	MOV RCX, RAX
-	CMP RCX, 0
+	CMP RAX, 0
 	JG lloop
 	MOV RAX, R8
 	RET
