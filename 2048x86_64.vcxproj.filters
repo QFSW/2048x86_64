@@ -53,10 +53,8 @@
     <MASM Include="src\game\rotategrid.asm">
       <Filter>Source Files</Filter>
     </MASM>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\game\game_main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <MASM Include="src\libs\math\logn.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

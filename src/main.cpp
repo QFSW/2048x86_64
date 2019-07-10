@@ -1,4 +1,4 @@
-#include "game/game_main.h"
+extern "C" int game_main();
 
 int main()
 {

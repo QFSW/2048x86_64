@@ -132,15 +132,13 @@
     <MASM Include="src\game\printgrid.asm" />
     <MASM Include="src\game\rotategrid.asm" />
     <MASM Include="src\libs\io\readl.asm" />
+    <MASM Include="src\libs\math\logn.asm" />
     <MASM Include="src\libs\memory\memcpy.asm" />
     <MASM Include="src\libs\memory\memeq.asm" />
     <MASM Include="src\libs\memory\memset.asm" />
     <MASM Include="src\libs\io\print.asm" />
     <MASM Include="src\libs\io\printd.asm" />
     <MASM Include="src\libs\strings\strlen.asm" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\game\game_main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
