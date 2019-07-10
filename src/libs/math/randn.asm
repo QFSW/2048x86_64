@@ -2,15 +2,15 @@ PUBLIC randn
 EXTERN rand:PROC
 
 .code
-; RAX = max excl
-; RDX = min incl
+; RCX = min incl
+; RDX = max excl
 randn PROC
 	PUSH R12
 	PUSH R13
-	MOV R12, RCX
-	MOV R13, RDX
+	MOV R12, RDX
+	MOV R13, RCX
+	SUB R12, R13
 	CALL rand
-	SUB RAX, R13
 	MOV RDX, 0
 	DIV R12
 	MOV RAX, RDX

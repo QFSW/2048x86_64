@@ -62,5 +62,8 @@
     <MASM Include="src\libs\math\randn.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="src\game\initgrid.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
