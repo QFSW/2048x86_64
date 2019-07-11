@@ -1,5 +1,5 @@
 PUBLIC game_main
-EXTERN gameover:PROC
+EXTERN checkgrid:PROC
 EXTERN printgrid:PROC, initgrid:PROC, mergegrid:PROC, rotategridn:PROC
 EXTERN addnum:PROC
 EXTERN print:PROC, pinput:PROC
@@ -63,11 +63,14 @@ legalmoveskp:
 	SUB R9, R12
 	CALL rotategridn
 
-	MOV RCX, grid
-	CALL gameover
+	LEA RCX, grid
+	MOV RDX, GRID_WIDTH
+	MOV R8, GRID_SIZE
+	CALL checkgrid
 	CMP RAX, 0
 	JE gameloop
 
+gameover:
 	LEA RCX, grid
 	MOV RDX, GRID_WIDTH
 	CALL printgrid

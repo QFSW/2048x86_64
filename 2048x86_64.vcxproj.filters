@@ -89,7 +89,10 @@
     <MASM Include="src\game\grid\newnum.asm">
       <Filter>Source Files</Filter>
     </MASM>
-    <MASM Include="src\game\grid\gameover.asm">
+    <MASM Include="src\game\grid\gameover\checkgrid.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
+    <MASM Include="src\game\grid\gameover\checknumadj.asm">
       <Filter>Source Files</Filter>
     </MASM>
   </ItemGroup>
