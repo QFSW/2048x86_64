@@ -1,4 +1,5 @@
 PUBLIC game_main
+EXTERN gameover:PROC
 EXTERN printgrid:PROC, initgrid:PROC, mergegrid:PROC, rotategridn:PROC
 EXTERN addnum:PROC
 EXTERN print:PROC, pinput:PROC
@@ -9,6 +10,7 @@ GRID_SIZE EQU GRID_WIDTH * GRID_WIDTH
 
 .data
 	intro db "Welcome to 2048!", 0
+	gameoverstr db "Game over!", 0
 	grid dq GRID_SIZE DUP(0)
 	grbuf dq GRID_SIZE DUP(?)
 
@@ -61,10 +63,21 @@ legalmoveskp:
 	SUB R9, R12
 	CALL rotategridn
 
-	JMP gameloop
+	MOV RCX, grid
+	CALL gameover
+	CMP RAX, 0
+	JE gameloop
+
+	LEA RCX, grid
+	MOV RDX, GRID_WIDTH
+	CALL printgrid
+
+	LEA RCX, gameoverstr
+	CALL print
 
 	LEAVE
 	POP R12
+	MOV RAX, 0
     RET
 game_main ENDP
 
