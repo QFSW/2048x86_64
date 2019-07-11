@@ -4,47 +4,31 @@ EXTERN putchar:PROC
 ASCII_0 EQU 48
 
 .code
+; prints a number in decimal format
 ; RCX = num
 printd PROC
 	PUSH R12
-	PUSH R13
-	PUSH R14
-	ENTER 32, 0
-	MOV R14, 0
-	MOV R13, RCX
-	MOV R12, 0
+	MOV R12, 0 ; dig ctr
 
-fliploop:
-	MOV RAX, R13
+	MOV RAX, RCX
 	MOV RCX, 10
+digsplitloop:
 	MOV RDX, 0
 	DIV RCX
-	MOV R13, RAX
-	MOV R8, RDX
-	MOV RAX, R12
-	MUL RCX
-	MOV R12, RAX
-	ADD R12, R8
-	INC R14
-	CMP R13, 0
-	JNE fliploop
+	PUSH DX
+	INC R12
+	CMP RAX, 0
+	JNE digsplitloop
 
 printloop:
-	MOV RAX, R12
-	MOV RCX, 10
-	MOV RDX, 0
-	DIV RCX
-	MOV R12, RAX
-	MOV RCX, RDX
-	ADD RCX, ASCII_0
+	POP CX
+	ADD CL, ASCII_0
+	ENTER 32, 0
 	CALL putchar
-	DEC R14
-	CMP R14, 0
-	JNE printloop
-
 	LEAVE
-	POP R14
-	POP R13
+	DEC R12
+	JNZ printloop
+
 	POP R12
 	RET
 printd ENDP
