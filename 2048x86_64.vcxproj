@@ -133,6 +133,7 @@
     <MASM Include="src\game\grid\merge\mergegrid.asm" />
     <MASM Include="src\game\grid\merge\mergenum.asm" />
     <MASM Include="src\game\grid\merge\mergerow.asm" />
+    <MASM Include="src\game\grid\newnum.asm" />
     <MASM Include="src\game\grid\rotategridn.asm" />
     <MASM Include="src\game\pinput.asm" />
     <MASM Include="src\game\grid\printgrid.asm" />

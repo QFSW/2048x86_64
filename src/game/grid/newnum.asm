@@ -1,0 +1,24 @@
+PUBLIC newnum
+EXTERN randn:PROC
+
+PROB_2 EQU 85
+PROB_4 EQU 15
+PROB_TOTAL EQU PROB_2 + PROB_4
+
+.code
+; gets a new number for the grid
+; RAX = num
+newnum PROC
+	MOV RCX, 0
+	MOV RDX, PROB_TOTAL
+	CALL randn
+
+	MOV RCX, 4
+	MOV RDX, 2
+	CMP RAX, PROB_4
+	CMOVLE RAX, RCX
+	CMOVG RAX, RDX
+	RET
+newnum ENDP
+
+END

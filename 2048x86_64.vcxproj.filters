@@ -86,5 +86,8 @@
     <MASM Include="src\libs\io\printdp.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="src\game\grid\newnum.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>
