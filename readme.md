@@ -4,6 +4,7 @@
 <p align="center">
   <img src=https://img.shields.io/github/issues-closed-raw/QFSW/2048x86_64.svg?color=51c414>
   <img src=https://img.shields.io/github/issues-raw/QFSW/2048x86_64.svg?color=c41414&style=popout>
+  <img src=https://img.shields.io/github/downloads/QFSW/2048x86_64/total.svg>
 </p>
 
 `2048x86_64` is the game _2048_ written purely in `x64` assembly
