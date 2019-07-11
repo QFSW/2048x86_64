@@ -2,7 +2,8 @@ PUBLIC game_main
 EXTERN checkgrid:PROC
 EXTERN printgrid:PROC, initgrid:PROC, mergegrid:PROC, rotategridn:PROC
 EXTERN addnum:PROC
-EXTERN print:PROC, pinput:PROC
+EXTERN print:PROC, readl:PROC
+EXTERN pinput:PROC
 EXTERN rseedt:PROC
 
 ASCII_LINE EQU 10
@@ -14,7 +15,7 @@ GRID_SIZE EQU GRID_WIDTH * GRID_WIDTH
 	      db "Use wasd to move the tiles along the grid, if two tiles of the same number touch, they'll merge", ASCII_LINE
 		  db "Try to get a 2048 tile, or go as high as you can!", ASCII_LINE
 		  db "The game will end if every tile gets filled and you can't merge any tiles", 0
-	gameoverstr db "Game over!", 0
+	gameoverstr db "Game over!", ASCII_LINE, 0
 	grid dq GRID_SIZE DUP(0)
 	grbuf dq GRID_SIZE DUP(?)
 
@@ -82,6 +83,10 @@ gameover:
 
 	LEA RCX, gameoverstr
 	CALL print
+
+	LEA RCX, grbuf
+	MOV RDX, 1
+	CALL readl
 
 	LEAVE
 	POP R12
