@@ -13,7 +13,11 @@
 
 Download [here](https://github.com/QFSW/2048x86_64/releases)
 
-Control with `wasd` for grid movement
+Use `wasd` to move the tiles along the grid, if two tiles of the same number touch, they'll merge
+ - `w` : up
+ - `a` : left
+ - `s` : down
+ - `d` : right
 
 ### Building
 Open `2048x86_64.sln` in Visual Studio and build the project
