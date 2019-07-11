@@ -22,6 +22,9 @@ mloop:
 	MOV RDX, R14
 	CALL mergenum
 	OR R15, RAX
+	CMP RAX, 3
+	JE antimerger
+mloopr:
 	INC R14
 	CMP R14, R13
 	JL mloop
@@ -33,6 +36,16 @@ mloop:
 	POP R12
 	LEAVE
 	RET
+
+antimerger:
+	ADD RDX, 1
+	SUB R14, RDX
+	SUB R13, RDX
+	MOV RAX, RDX
+	MOV RCX, 8
+	MUL RCX
+	ADD R12, RAX
+	JMP mloopr
 mergerow ENDP
 
 END
