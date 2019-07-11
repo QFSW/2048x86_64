@@ -95,5 +95,8 @@
     <MASM Include="src\game\grid\gameover\checknumadj.asm">
       <Filter>Source Files</Filter>
     </MASM>
+    <MASM Include="src\libs\io\csclr.asm">
+      <Filter>Source Files</Filter>
+    </MASM>
   </ItemGroup>
 </Project>

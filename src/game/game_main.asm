@@ -2,7 +2,7 @@ PUBLIC game_main
 EXTERN checkgrid:PROC
 EXTERN printgrid:PROC, initgrid:PROC, mergegrid:PROC, rotategridn:PROC
 EXTERN addnum:PROC
-EXTERN print:PROC, readl:PROC
+EXTERN print:PROC, readl:PROC, csclr:PROC
 EXTERN pinput:PROC
 EXTERN rseedt:PROC
 
@@ -69,6 +69,8 @@ legalmoveskp:
 	CALL rotategridn
 
 gameoverchk:
+	CALL csclr
+
 	LEA RCX, grid
 	MOV RDX, GRID_WIDTH
 	MOV R8, GRID_SIZE

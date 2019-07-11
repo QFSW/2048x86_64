@@ -140,6 +140,7 @@
     <MASM Include="src\game\pinput.asm" />
     <MASM Include="src\game\grid\printgrid.asm" />
     <MASM Include="src\game\grid\rotategrid.asm" />
+    <MASM Include="src\libs\io\csclr.asm" />
     <MASM Include="src\libs\io\printdp.asm" />
     <MASM Include="src\libs\io\readl.asm" />
     <MASM Include="src\libs\math\logn.asm" />
