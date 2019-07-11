@@ -1,9 +1,10 @@
 PUBLIC memcpyw
 
+.code
+; copies a block of word aligned memory
 ; RCX = src
 ; RDX = dest
-; R8 = size
-.code
+; R8 = size (words)
 memcpyw PROC
 mloop:
 	DEC R8

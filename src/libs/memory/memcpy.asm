@@ -1,9 +1,10 @@
 PUBLIC memcpy
 
+.code
+; copies a block of memory
 ; RCX = src
 ; RDX = dest
-; R8 = size
-.code
+; R8 = size (bytes)
 memcpy PROC
 mloop:
 	DEC R8

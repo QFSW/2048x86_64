@@ -1,8 +1,10 @@
 PUBLIC strlen
 
 .code
+; gets the length of a string
+; RCX = str
 strlen PROC
-	MOV RAX, -1
+	MOV RAX, -1 ; length ctr
 
 sloop:
 	INC RAX

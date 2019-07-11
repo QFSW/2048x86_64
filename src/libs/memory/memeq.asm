@@ -1,10 +1,11 @@
 PUBLIC memeq
 
+.code
+; determined if two blocks of memory are equal
 ; RCX = mem1
 ; RDX = mem2
 ; R8 = size
 ; RAX = eq
-.code
 memeq PROC
 mloop:
 	DEC R8

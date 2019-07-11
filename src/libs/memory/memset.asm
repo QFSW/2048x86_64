@@ -1,9 +1,10 @@
 PUBLIC memset
 
+.code
+; sets a block of memory to the specified value
 ; RCX = mem
 ; DL = val
 ; R8 = size
-.code
 memset PROC
 mloop:
 	DEC R8
