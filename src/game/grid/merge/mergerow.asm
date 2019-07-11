@@ -2,6 +2,7 @@ PUBLIC mergerow
 EXTERN mergenum:PROC
 
 .code
+; merges and moves all of the numbers in a row
 ; RCX = row ptr
 ; RDX = row size
 ; RAX = 1 : moved
@@ -12,10 +13,10 @@ mergerow PROC
 	PUSH R13
 	PUSH R14
 	PUSH R15
-	MOV R12, RCX
-	MOV R13, RDX
+	MOV R12, RCX ; row ptr
+	MOV R13, RDX ; row size
 	MOV R14, 1
-	MOV R15, 0
+	MOV R15, 0 ; return
 
 mloop:
 	MOV RCX, R12
