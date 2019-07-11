@@ -18,6 +18,8 @@ Use `wasd` to move the tiles along the grid, if two tiles of the same number tou
  - `a` : left
  - `s` : down
  - `d` : right
+ 
+Try to get a `2048` tile, or go as high as you can! The game will end if every tile gets filled and you can't merge any tiles
 
 ### Building
 Open `2048x86_64.sln` in Visual Studio and build the project
