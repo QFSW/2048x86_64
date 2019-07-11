@@ -11,6 +11,7 @@ ASCII_LINE EQU 10
 	linespacing db LINE_COUNT DUP(ASCII_LINE), 0
 
 .code
+; prints the grid
 ; RCX = grid ptr
 ; RDX = grid width
 printgrid PROC
@@ -19,12 +20,12 @@ printgrid PROC
 	PUSH R14
 	PUSH R15
 	ENTER 32, 0
-	MOV R12, RCX
-	MOV R13, RDX
-	MOV R15, -1
+	MOV R12, RCX ; grid ptr
+	MOV R13, RDX ; grid width
+	MOV R15, -1 ; y index
 
 cloop:
-	MOV R14, 0
+	MOV R14, 0 ; x index
 	INC R15
 	CMP R15, R13
 	JE pend
