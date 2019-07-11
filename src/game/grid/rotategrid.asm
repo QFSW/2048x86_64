@@ -1,6 +1,7 @@
 PUBLIC rotategrid
 
 .code
+; rotates the grid
 ; RCX = src ptr
 ; RDX = dest ptr
 ; R8 = grid size
@@ -9,9 +10,10 @@ rotategrid PROC
 	PUSH R12
 	PUSH R13
 	PUSH R14
-	MOV R12, RCX
-	MOV R13, RDX
-	MOV R14, 0
+	MOV R12, RCX ; src ptr
+	MOV R13, RDX ; dest ptr
+	MOV R14, 0 ; linear ctr
+
 rloop: ;y2 = x1, x2 = n - y1
 	MOV RAX, R14
 	MOV RDX, 0
@@ -22,6 +24,7 @@ rloop: ;y2 = x1, x2 = n - y1
 	ADD RAX, R9
 	SUB RAX, RCX
 	SUB RAX, 1
+
 	MOV RCX, [R12 + RAX * 8]
 	MOV [R13 + R14 * 8], RCX
 	INC R14
