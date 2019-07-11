@@ -18,8 +18,8 @@ checknumadj PROC
 	MOV RDX, 0
 	DIV R13
 
-	MOV R8, RAX ; x
-	MOV R9, RDX ; y
+	MOV R8, RDX ; x
+	MOV R9, RAX ; y
 
 left:
 	CMP R8, 0
