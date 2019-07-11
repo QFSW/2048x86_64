@@ -19,14 +19,14 @@ MOVE_DOWN EQU 3
 ; gets player input
 ; RAX = move
 pinput PROC
-	SUB RSP, 8
+	SUB RSP, 2
 	ENTER 32, 0
 	LEA RCX, inputstr
 	CALL print
 
 ploop:
 	MOV RCX, RSP
-	MOV RDX, 1
+	MOV RDX, 2
 	CALL readl
 	MOV AL, [RSP]
 	CMP AL, ASCII_a
@@ -47,7 +47,7 @@ ploop:
 pend:
 	MOV RAX, RDX
 	LEAVE
-	ADD RSP, 8
+	ADD RSP, 2
 	RET
 pinput ENDP
 
