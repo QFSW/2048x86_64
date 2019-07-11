@@ -30,3 +30,7 @@ The entirity of the game is found underneath `src` if you would like to assemble
 Assembled and tested with `Visual Studio 2019` (`MASM`) under `Windows 10` with a `i7-4790k` CPU
 
 Likely works on all `x64` CPUs (and possibly other operating systems) but not tested
+
+External functions used:
+ - `putchar` `getchar`
+ - `system`
