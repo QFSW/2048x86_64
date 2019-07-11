@@ -17,7 +17,7 @@ Control with `wasd` for grid movement
 ### Building
 Open `2048x86_64.sln` in Visual Studio and build the project
 
-The entirity of the game is found underneath `src` if you would like to assembly it without Visual Studio
+The entirity of the game is found underneath `src` if you would like to assemble it without Visual Studio
 
 ### Notes
 Assembled and tested with `Visual Studio 2019` (`MASM`) under `Windows 10` with a `i7-4790k` CPU
