@@ -16,27 +16,29 @@ MOVE_DOWN EQU 3
 	invlstr db "Invalid move, please enter a move: ", 0
 
 .code
+; gets player input
 ; RAX = move
 pinput PROC
 	SUB RSP, 8
 	ENTER 32, 0
 	LEA RCX, inputstr
 	CALL print
+
 ploop:
 	MOV RCX, RSP
 	MOV RDX, 1
 	CALL readl
-	MOV RAX, [RSP]
-	CMP RAX, ASCII_a
+	MOV AL, [RSP]
+	CMP AL, ASCII_a
 	MOV RDX, MOVE_LEFT
 	JE pend
-	CMP RAX, ASCII_w
+	CMP AL, ASCII_w
 	MOV RDX, MOVE_UP
 	JE pend
-	CMP RAX, ASCII_d
+	CMP AL, ASCII_d
 	MOV RDX, MOVE_RIGHT
 	JE pend
-	CMP RAX, ASCII_s
+	CMP AL, ASCII_s
 	MOV RDX, MOVE_DOWN
 	JE pend
 	LEA RCX, invlstr
