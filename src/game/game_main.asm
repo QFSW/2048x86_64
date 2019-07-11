@@ -5,11 +5,13 @@ EXTERN addnum:PROC
 EXTERN print:PROC, pinput:PROC
 EXTERN rseedt:PROC
 
+ASCII_LINE EQU 10
 GRID_WIDTH EQU 4
 GRID_SIZE EQU GRID_WIDTH * GRID_WIDTH
 
 .data
-	intro db "Welcome to 2048!", 0
+	intro db "Welcome to 2048!", ASCII_LINE
+	      db "Use wasd to move the tiles", 0
 	gameoverstr db "Game over!", 0
 	grid dq GRID_SIZE DUP(0)
 	grbuf dq GRID_SIZE DUP(?)
