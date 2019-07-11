@@ -15,7 +15,7 @@ mergerow PROC
 	PUSH R15
 	MOV R12, RCX ; row ptr
 	MOV R13, RDX ; row size
-	MOV R14, 1
+	MOV R14, 1 ; index ctr
 	MOV R15, 0 ; return
 
 mloop:
