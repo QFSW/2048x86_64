@@ -55,7 +55,7 @@ gameloop:
 
 legalmoveskp:
 	CMP R12, 0
-	JE gameloop
+	JE gameoverchk
 	LEA RCX, grid
 	LEA RDX, grbuf
 	MOV R8, GRID_WIDTH
@@ -63,6 +63,7 @@ legalmoveskp:
 	SUB R9, R12
 	CALL rotategridn
 
+gameoverchk:
 	LEA RCX, grid
 	MOV RDX, GRID_WIDTH
 	MOV R8, GRID_SIZE
