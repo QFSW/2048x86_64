@@ -1,5 +1,6 @@
 PUBLIC addnum
 EXTERN randn:PROC
+EXTERN newnum:PROC
 
 .code
 ; adds a new number into an empty slot in the grid
@@ -30,9 +31,11 @@ numnotfound:
 
 	MOV RCX, 0
 	CALL randn
-	MOV RCX, 2
-	MOV RDX, [R14 + RAX * 8] ; loads index
-	MOV [R12 + RDX * 8], RCX ; stores value
+	MOV R13, RAX ; now used to store randn result, grid size no longer needed
+
+	CALL newnum
+	MOV RDX, [R14 + R13 * 8] ; loads index
+	MOV [R12 + RDX * 8], RAX ; stores value
 
 	LEAVE
 	POP R14
