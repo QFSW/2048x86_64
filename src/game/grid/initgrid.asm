@@ -1,5 +1,6 @@
 PUBLIC initgrid
 EXTERN randn:PROC
+EXTERN newnum:PROC
 
 .code
 ; initializes the grid
@@ -16,9 +17,9 @@ initgrid PROC
 	MOV RCX, 0
 	CALL randn
 
-	MOV R14, RAX
-	MOV RCX, 2
-	MOV [R12 + RAX * 8], RCX
+	MOV R14, RAX ; first tile
+	CALL newnum
+	MOV [R12 + R14 * 8], RAX
 
 iloop: ;perhaps split this with a better binary split style algorithm
 	MOV RCX, 0
@@ -26,8 +27,10 @@ iloop: ;perhaps split this with a better binary split style algorithm
 	CALL randn
 	CMP RAX, R14
 	JE iloop
-	MOV RCX, 2
-	MOV [R12 + RAX * 8], RCX
+
+	MOV R14, RAX ; override first tile with second tile, first no longer needed
+	CALL newnum
+	MOV [R12 + R14 * 8], RAX
 
 	LEAVE
 	POP R14
