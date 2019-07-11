@@ -12,7 +12,7 @@ MOVE_RIGHT EQU 2
 MOVE_DOWN EQU 3
 
 .data
-	inputstr db "Please input a move: ", 0
+	inputstr db "Please enter a move: ", 0
 	invlstr db "Invalid move, please enter a move: ", 0
 
 .code
