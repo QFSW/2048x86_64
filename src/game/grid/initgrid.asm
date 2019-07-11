@@ -2,6 +2,7 @@ PUBLIC initgrid
 EXTERN randn:PROC
 
 .code
+; initializes the grid
 ; RCX = grid ptr
 ; RDX = grid size
 initgrid PROC
@@ -9,11 +10,10 @@ initgrid PROC
 	PUSH R13
 	PUSH R14
 	ENTER 32, 0
-	MOV R12, RCX
-	MOV R13, RDX
+	MOV R12, RCX ; grid ptr
+	MOV R13, RDX ; grid size
 
 	MOV RCX, 0
-	MOV RDX, R13
 	CALL randn
 
 	MOV R14, RAX
